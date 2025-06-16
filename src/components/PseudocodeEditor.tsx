@@ -189,10 +189,10 @@ A5. ESCRIBIR(contador, suma, max, promedio, contador_pares, contador_impares)
   const [customTheme, setCustomTheme] = useState<unknown>(null);
   const [selectedTheme, setSelectedTheme] = useState("dracula");
 
-  const monacoRef = useRef<any>(null);
+  const monacoRef = useRef<typeof monaco | null>(null);
 
   useEffect(() => {
-    fetch(`/src/themes/${selectedTheme}.json`)
+    fetch(`/themes/${selectedTheme}.json`)
       .then((res) => res.json())
       .then((data) => setCustomTheme(data));
   }, [selectedTheme]);
