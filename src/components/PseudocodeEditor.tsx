@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import MonacoEditor, { OnMount } from "@monaco-editor/react";
-import type * as monaco from "monaco-editor";
+import * as monaco from "monaco-editor";
 import * as ContextMenu from "@radix-ui/react-context-menu";
 import { DeleteIcon } from "@/icons/DeleteIcon";
 
@@ -365,7 +365,7 @@ A5. ESCRIBIR(contador, suma, max, promedio, contador_pares, contador_impares)
     });
   };
 
-  const handleEditorMount: OnMount = (editor, monaco) => {
+  const handleEditorMount: OnMount = (_editor, monaco) => {
     monacoRef.current = monaco;
     // Registrar el lenguaje pseudocode si no existe
     if (
